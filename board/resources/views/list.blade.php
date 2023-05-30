@@ -7,6 +7,7 @@
     <title>boards</title>
 </head>
 <body>
+        <a href="{{route('boards.create')}}">작성하기</a>
     <table>
         <tr>
             <th>글번호</th>
@@ -18,7 +19,7 @@
     @forelse($datas as $item)
         <tr>
         <td>{{$item->id}}</td>
-        <td>{{$item->title}}</td>
+        <td><a href="{{route('boards.show' ,['board' => $item->id ])}}">{{$item->title}}</a></td>
         <td>{{$item->hits}}</td>
         <td>{{$item->created_at}}</td>
         <td>{{$item->updated_at}}</td>
